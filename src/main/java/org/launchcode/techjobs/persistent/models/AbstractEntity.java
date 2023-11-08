@@ -15,7 +15,6 @@ public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
-
     private int id;
 
     @NotNull(message = "name is required")

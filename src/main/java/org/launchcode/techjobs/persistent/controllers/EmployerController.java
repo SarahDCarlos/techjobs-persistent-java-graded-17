@@ -21,7 +21,7 @@ public class EmployerController {
     @GetMapping("/")
     public String index(Model model) {
 
-        model.addAttribute("title", "All Employers");
+//        model.addAttribute("title", "All Employers");
         model.addAttribute("employers", employerRepository.findAll());
 
         return "employers/index";
@@ -45,7 +45,7 @@ public class EmployerController {
     }
 
     @GetMapping("view/{employerId}")
-    public String displayViewEmployer(Model model, @PathVariable(required = false) int employerId) {
+    public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
         Optional<Employer> optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
